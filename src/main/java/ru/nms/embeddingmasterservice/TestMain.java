@@ -11,7 +11,7 @@ import ru.nms.embeddingslibrary.model.WorkerServiceMeta;
 
 import java.util.Arrays;
 
-public class Main {
+public class TestMain {
 
 
     public static void main(String[] args) {

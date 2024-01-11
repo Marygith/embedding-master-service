@@ -1,6 +1,5 @@
 package ru.nms.embeddingmasterservice;
 
-import jakarta.annotation.PostConstruct;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.ExponentialBackoffRetry;
@@ -12,6 +11,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import ru.nms.embeddingslibrary.model.MasterServiceMeta;
+
+import javax.annotation.PostConstruct;
 
 @SpringBootApplication
 public class EmbeddingMasterServiceApplication {
@@ -29,8 +30,6 @@ public class EmbeddingMasterServiceApplication {
 	@Value("${zookeeper.address}")
 	private String zookeeperAddress;
 
-	@Value("${zookeeper.master.id}")
-	private String id;
 	private CuratorFramework client;
 
 

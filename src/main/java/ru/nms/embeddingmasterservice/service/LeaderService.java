@@ -1,6 +1,5 @@
 package ru.nms.embeddingmasterservice.service;
 
-import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.leader.LeaderSelector;
@@ -8,6 +7,7 @@ import org.apache.curator.framework.recipes.leader.LeaderSelectorListenerAdapter
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -15,9 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class LeaderService extends LeaderSelectorListenerAdapter{
 
     private final CuratorFramework client;
-
     private  LeaderSelector leaderSelector;
-
 
     private final MasterService masterService;
 
@@ -39,8 +37,8 @@ public class LeaderService extends LeaderSelectorListenerAdapter{
 
     @Override
     public void takeLeadership(CuratorFramework curatorFramework) throws Exception {
-        final int waitSeconds = (int) (5 * Math.random()) + 15;
-        System.out.println(name + " is now the leader. Waiting " + waitSeconds + " seconds...");
+        final int waitSeconds = (int) (5 * Math.random()) + 15000;
+        System.out.println(name + " is now the leader. Waiting " + waitSeconds + " seconds...\n");
 
         masterService.initWorkerInstancesListener();
 
