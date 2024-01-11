@@ -19,3 +19,7 @@ Also, master maintains fault-tolerance, so each data shard has 3 replicas, and t
 If there are several master instances, request to retrieve embeddings can be worwarded to eny of them, as reading does not change data.
 
 Workers' management, though, can be enforced only by one of the masters, that's why leader election implemented. Onle leader instance listens to workers' events.
+
+## Requirements
+
+This project requires java 21 and running zookeeper(by defult address - localhost:2181)
