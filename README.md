@@ -1,7 +1,7 @@
 # Master service for embeddings retrieval project
 ## Overview
 
-Master service accepts requests for embeddings retrieval and manages worker nodes. To provide fault tolerance, there can be several master nodes.
+Master service accepts requests for embeddings retrieval and manages[ worker nodes ](https://github.com/Marygith/embeddings-server) . To provide fault tolerance, there can be several master nodes.
 
 ## Embedding retrieval
 
